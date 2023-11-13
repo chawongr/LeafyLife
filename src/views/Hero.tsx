@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import FadeIn from "../components/FadeIn";
 
 import cactus from "../../src/assets/cactus.png"

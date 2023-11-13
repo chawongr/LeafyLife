@@ -129,10 +129,10 @@ export const footerLinksColumnTwo = [
     links: ["Best Product", "Categories"],
   },
   {
-    title: "Address",
+    title: "Contact",
     links: [
-      "JL. Setiabudhi No. 193 Sukasari, Bandung West Java, Indonesia",
-      "hallo@daunku.com",
+      "GitHub: chawongr",
+      "Email: ddreamc1@gmail.com",
     ],
   },
 ];
