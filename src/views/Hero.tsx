@@ -3,13 +3,22 @@ import FadeIn from "../components/FadeIn";
 import cactus from "../../src/assets/cactus.png"
 
 import { heroTitle, heroSubtitle } from "../data";
+import SignupModal from '../components/Modals/SignupModal';
+
 
 import NavBar from "../components/NavBar"
 
 import { BiRightArrowAlt } from "react-icons/bi"
 import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+
 
 const Hero = () => {
+    const [showSignupModal, setShowSignupModal] = useState(false);
+
+    const toggleSignupModal = () => {
+        setShowSignupModal(!showSignupModal)
+    };
 
     return (
         <div className=" relative flex flex-col items-center bg-gradient-to-b from-green-200 via-green-50 to-slate-0 ">
@@ -24,12 +33,10 @@ const Hero = () => {
                             <h6 className=" lg:m-0 mt-6 text-center mx-auto lg:text-start text-base xs:text-xl text-fontGray lg:max-w-[600px] max-w-[300px] ">
                                 {heroSubtitle}
                             </h6>
-                            <div className="flex justify-center lg:justify-start mt-9 ">
-                                <Link to="/login">
-                                    <button className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 xs:text-xl font-semibold rounded-lg ">
-                                        Join Now
-                                    </button>
-                                </Link>
+                            <div className="flex justify-center lg:justify-start mt-9 " onClick={toggleSignupModal}>
+                                <button className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 xs:text-xl font-semibold rounded-lg " >
+                                    Join Now
+                                </button>
                                 <div className="flex py-3 px-6 xs:text-xl ">
                                     <p className="text-neutral-600">
                                         See how its work
@@ -46,6 +53,7 @@ const Hero = () => {
                     <img src={cactus} alt="cactus" className="mt-4 lg:mt-0 max-w-[300px] lg:max-w-[500px]" />
                 </FadeIn>
             </div>
+            
         </div>
     );
 };

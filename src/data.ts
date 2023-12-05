@@ -132,7 +132,7 @@ export const footerLinksColumnTwo = [
     title: "Contact",
     links: [
       "GitHub: chawongr",
-      "Email: ddreamc1@gmail.com",
+      "Email: chawong.cw@gmail.com",
     ],
   },
 ];

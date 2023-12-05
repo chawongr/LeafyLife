@@ -3,16 +3,17 @@ import React, { useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { FaCircleUser } from 'react-icons/fa6';
 import SigninModal from './Modals/SigninModal';
+import SignupModal from './Modals/SignupModal';
 import Modal from 'react-modal';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 const UserButton = () => {
     const [dropdown, setDropdown] = useState(false);
     const [showSigninModal, setShowSigninModal] = useState(false);
+    const [showSignupModal, setShowSignupModal] = useState(false);
 
     const toggleDropdown = () => {
         setDropdown(!dropdown)
-
     };
 
     const toggleSigninModal = () => {
@@ -20,8 +21,14 @@ const UserButton = () => {
         setDropdown(false)
     };
 
+    const toggleSignupModal = () => {
+        setShowSignupModal(!showSignupModal)
+        setDropdown(false)
+    };
+
     return (
-        <div className=' w-[200px] flex flex-col items-end'>
+        <div className="hidden md:block">
+            <div className='w-[200px] flex flex-col items-end'>
             <div className='w-20 border-[1.5px] border-black rounded-full py-1 px-2 hover:shadow-md' onClick={toggleDropdown}>
                 <div className='flex'>
                     <div className='my-auto mr-2 ml-1'>
@@ -38,7 +45,7 @@ const UserButton = () => {
                     <OutsideClickHandler onOutsideClick={toggleDropdown}>
                         <div className='py-2 px-12'>
                             <div onClick={toggleSigninModal} className='cursor-pointer hover:underline'>Sign in</div>
-                            <div className='cursor-pointer hover:underline'>Sign up</div>
+                            <div onClick={toggleSignupModal} className='cursor-pointer hover:underline'>Sign up</div>
                         </div>
                     </OutsideClickHandler>
 
@@ -52,6 +59,14 @@ const UserButton = () => {
                     </OutsideClickHandler>
                 </Modal>
             )}
+            {showSignupModal && (
+                <Modal isOpen={showSignupModal} onRequestClose={toggleSignupModal} className="fixed inset-0 flex items-center justify-center">
+                    <OutsideClickHandler onOutsideClick={toggleSignupModal}>
+                        <SignupModal closeModal={toggleSignupModal} />
+                    </OutsideClickHandler>
+                </Modal>
+            )}
+        </div>
         </div>
     );
 };
