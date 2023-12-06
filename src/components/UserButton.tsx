@@ -62,7 +62,7 @@ const UserButton = () => {
             {showSignupModal && (
                 <Modal isOpen={showSignupModal} onRequestClose={toggleSignupModal} className="fixed inset-0 flex items-center justify-center">
                     <OutsideClickHandler onOutsideClick={toggleSignupModal}>
-                        <SignupModal closeModal={toggleSignupModal} />
+                        {/* <SignupModal closeModal={toggleSignupModal} /> */}
                     </OutsideClickHandler>
                 </Modal>
             )}

@@ -5,8 +5,8 @@ import { footerLinksColumnOne,
 
 const Footer = () => {
     return ( 
-        <div className="bg-[linear-gradient(133deg,_#566270_0%,_#283444_100%)] rounded-t-[50px]">
-            <div className="max-w-[1490px] mx-auto px-10 py-[120px]">
+        <div className="bg-[linear-gradient(133deg,_#566270_0%,_#283444_100%)] rounded-t-[50px] ">
+            <div className="max-w-[1490px] mx-auto px-10 py-[120px] overflow-hidden">
                 <div className="flex flex-col items-center xl:items-start xl:flex-row xl:justify-between gap-12">
                     <div className="w-full xl:w-auto flex flex-col items-center xl:items-start">
                         <h2 className="text-white text-center xl:text-start font-medium tetxt-3xl lg:text-[32px]">

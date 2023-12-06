@@ -15,7 +15,7 @@ import SignupModal from './Modals/SignupModal';
 import Modal from 'react-modal';
 import OutsideClickHandler from 'react-outside-click-handler';
 
-const Hero = () => {
+const NavBar = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [showSigninModal, setShowSigninModal] = useState(false);
@@ -26,9 +26,14 @@ const Hero = () => {
         setShowMobileMenu(false)
     };
 
+    // const toggleSignupModal = () => {
+    //     setShowSignupModal(!showSignupModal)
+    //     setShowMobileMenu(false)
+    // };
     const toggleSignupModal = () => {
-        setShowSignupModal(!showSignupModal)
-        setShowMobileMenu(false)
+        setShowSignupModal(!showSignupModal);
+        setShowSigninModal(false); // Close the signin modal if it's open
+        setShowMobileMenu(false);
     };
 
     const toggleMobileMenu = () => {
@@ -56,27 +61,27 @@ const Hero = () => {
             {/* <OutsideClickHandler onOutsideClick={toggleMobileMenu}>
 
             </OutsideClickHandler> */}
-                <div
-                    className={`block md:hidden w-screen fixed ${!showMobileMenu ? "-top-[510px]" : "top-0"
-                        } left-0 bg-[#dde0e5] h-[410] transition-all duration-[800ms] shadow-xl z-10 py-8 px-12 rounded-b-xl`}
-                >
-                    <AiOutlineClose
-                        size={25}
-                        className="absolute top-5 right-5 cursor-pointer"
-                        onClick={() => setShowMobileMenu(false)}
-                    />
+            <div
+                className={`block md:hidden w-screen fixed ${!showMobileMenu ? "-top-[510px]" : "top-0"
+                    } left-0 bg-[#dde0e5] h-[410] transition-all duration-[800ms] shadow-xl z-10 py-8 px-12 rounded-b-xl`}
+            >
+                <AiOutlineClose
+                    size={25}
+                    className="absolute top-5 right-5 cursor-pointer"
+                    onClick={() => setShowMobileMenu(false)}
+                />
 
-                    <ul className="pt-[60px] items-center flex flex-col gap-8">
-                        <NavLink to="services" mobileMenu>Services</NavLink>
-                        <NavLink to="products" mobileMenu>Shop</NavLink>
-                        <NavLink to="reference" mobileMenu>Reference</NavLink>
-                        <NavLink to="care" mobileMenu>Care</NavLink>
-                        <NavLink onClick={toggleSigninModal} mobileMenu className='cursor-pointer hover:underline'>Sign in</NavLink>
-                        <NavLink onClick={toggleSignupModal} mobileMenu className='cursor-pointer hover:underline'>Sign up</NavLink>
-                    </ul>
+                <ul className="pt-[60px] items-center flex flex-col gap-8">
+                    <NavLink to="services" mobileMenu>Services</NavLink>
+                    <NavLink to="products" mobileMenu>Shop</NavLink>
+                    <NavLink to="reference" mobileMenu>Reference</NavLink>
+                    <NavLink to="care" mobileMenu>Care</NavLink>
+                    <NavLink onClick={toggleSigninModal} mobileMenu className='cursor-pointer hover:underline'>Sign in</NavLink>
+                    <NavLink onClick={toggleSignupModal} mobileMenu className='cursor-pointer hover:underline'>Sign up</NavLink>
+                </ul>
 
-                    {/* <img src={cartIcon} className="mt-8 mx-auto cursor-pointer" alt="" /> */}
-                </div>
+                {/* <img src={cartIcon} className="mt-8 mx-auto cursor-pointer" alt="" /> */}
+            </div>
             {showSigninModal && (
                 <Modal isOpen={showSigninModal} onRequestClose={toggleSigninModal} className="fixed inset-0 flex items-center justify-center">
                     <OutsideClickHandler onOutsideClick={toggleSigninModal}>
@@ -84,6 +89,13 @@ const Hero = () => {
                     </OutsideClickHandler>
                 </Modal>
             )}
+            {/* {showSignupModal && (
+                <Modal isOpen={showSignupModal} onRequestClose={toggleSignupModal} className="fixed inset-0 flex items-center justify-center">
+                    <OutsideClickHandler onOutsideClick={toggleSignupModal}>
+                        <SignupModal closeModal={toggleSignupModal} />
+                    </OutsideClickHandler>
+                </Modal>
+            )} */}
             {showSignupModal && (
                 <Modal isOpen={showSignupModal} onRequestClose={toggleSignupModal} className="fixed inset-0 flex items-center justify-center">
                     <OutsideClickHandler onOutsideClick={toggleSignupModal}>
@@ -96,7 +108,7 @@ const Hero = () => {
     );
 };
 
-export default Hero;
+export default NavBar;
 
 
 

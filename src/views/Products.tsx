@@ -10,7 +10,7 @@ const Products = () => {
     return (
         <div
             id="products"
-            className="flex flex-col 2xl:flex-row gap-[128px] 2xl:gap-2 2xl:justify-between mt-[160px] 2xl:mt-[270px] mb-[160px] max-w-[1490px] mx-auto px-10 w-full"
+            className="flex flex-col 2xl:flex-row gap-[128px] 2xl:gap-2 2xl:justify-between mt-[160px] 2xl:mt-[270px] mb-[160px] max-w-[1490px] mx-auto px-10 w-full overflow-hidden"
         >
             <FadeIn delay={0.2} direction="right">
                 <div className="flex flex-col">

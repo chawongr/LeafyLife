@@ -6,7 +6,7 @@ import imageThree from "../assets/refTwo.jpg"
 
 const Reference = () => {
     return (
-        <div id="reference" className="mb-[160px] px-10 max-w-[1490px] mx-auto">
+        <div id="reference" className="mb-[160px] px-10 max-w-[1490px] mx-auto overflow-hidden">
             <FadeIn delay={0.2} direction="down">
                 <h1 className="text-5xl lg:text-[64px] font-medium text-fontBlack mb-6 text-center">
                     {referenceTitle}

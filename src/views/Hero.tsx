@@ -23,7 +23,7 @@ const Hero = () => {
     return (
         <div className=" relative flex flex-col items-center bg-gradient-to-b from-green-200 via-green-50 to-slate-0 ">
             <NavBar />
-            <div className="flex flex-col lg:flex-row gap-8 mt-[80px] w-full max-w-[1490px] justify-around ">
+            <div className="flex flex-col lg:flex-row gap-8 mt-[80px] w-full max-w-[1490px] justify-around overflow-hidden">
                 <FadeIn delay={0.4} direction="right">
                     <div className="flex flex-col xs:flex-row gap-6 xs:items-start">
                         <div className="text-center my-auto ">
